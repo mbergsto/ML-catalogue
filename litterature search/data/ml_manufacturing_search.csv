@@ -1,0 +1,15 @@
+Query (short),Query (exact),Total,After 2015,After 2020,After 2023,After 2015 (%),After 2020 (%),After 2023 (%)
+ML ∧ manufacturing,"machine learning" AND "manufacturing",16871,16403,14872,10173,97.2,88.1,60.3
+ML ∧ production,"machine learning" AND "production",37724,36760,33041,22173,97.4,87.6,58.8
+ML ∧ product development,"machine learning" AND "product development",915,874,764,517,95.5,83.5,56.5
+ML ∧ planning ∧ production,"machine learning" AND planning AND production,2290,2233,1992,1310,97.5,87.0,57.2
+ML ∧ product design,"machine learning" AND "product design",1408,1335,1113,623,94.8,79.1,44.2
+ML ∧ manufacturing ∧ optimization,"machine learning" AND manufacturing AND optimization,3927,3844,3633,2793,97.9,92.5,71.1
+ML ∧ production ∧ optimization,"machine learning" AND production AND optimization,7175,7080,6580,4866,98.7,91.7,67.8
+ML ∧ predictive maintenance,"machine learning" AND "predictive maintenance",4384,4366,4071,3025,99.6,92.9,69.0
+ML ∧ anomaly detection ∧ production,"machine learning" AND "anomaly detection" AND "production",704,693,620,404,98.4,88.1,57.4
+ML ∧ process control,"machine learning" AND "process control",3280,3057,2621,1744,93.2,79.9,53.2
+ML ∧ process modeling,"machine learning" AND "process modeling",758,715,609,381,94.3,80.3,50.3
+ML ∧ RUL / remaining useful life,"machine learning" AND (RUL OR "remaining useful life"),1552,1531,1378,903,98.6,88.8,58.2
+ML ∧ defect detection ∧ manufacturing,"machine learning" AND "defect detection" AND manufacturing,681,676,637,471,99.3,93.5,69.2
+ML ∧ PLM / product lifecycle management,"machine learning" AND (PLM OR "product lifecycle management"),252,250,231,180,99.2,91.7,71.4
