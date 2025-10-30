@@ -1,0 +1,10 @@
+Group,Query (short),Query (exact),Total
+Library/Framework,TensorFlow ∧ (mfg/dev/PLC/PLM),("manufacturing" OR "product development" OR "product lifecycle" OR "PLM") AND "TensorFlow",88
+Library/Framework,PyTorch ∧ (mfg/prod/PLC/PLM),("manufacturing" OR "production" OR "product lifecycle" OR "PLM") AND "PyTorch",35
+Library/Framework,scikit-learn ∧ (mfg/prod/PLC/PLM),("manufacturing" OR "production" OR "product lifecycle" OR "PLM") AND "scikit-learn",22
+Library/Framework,Keras ∧ (mfg/prod/PLC/PLM),("manufacturing" OR "production" OR "product lifecycle" OR "PLM") AND "Keras",44
+Library/Framework,OpenCV ∧ (mfg/dev/PLC/PLM),("manufacturing" OR "product development" OR "product lifecycle" OR "PLM") AND "OpenCV",163
+Cloud Platform,Microsoft Azure ∧ (mfg/dev/PLC/PLM),("manufacturing" OR "product development" OR "product lifecycle" OR "PLM") AND "Microsoft Azure",14
+Cloud Platform,AWS SageMaker ∧ (mfg/dev/PLC/PLM),("manufacturing" OR "product development" OR "product lifecycle" OR "PLM") AND "AWS SageMaker",0
+Cloud Platform,Google Cloud ∧ (mfg/dev/PLC/PLM),("manufacturing" OR "product development" OR "product lifecycle" OR "PLM") AND "Google Cloud" AND "Machine learning",7
+Summary,Summarized ML platforms & libs,("machine learning" OR "artificial intelligence" OR "deep learning") AND ("manufacturing" OR "product development" OR "product lifecycle" OR "PLM") AND ("Microsoft Azure Machine Learning" OR "Azure ML" OR "Amazon SageMaker" OR "AWS SageMaker" OR "Google Cloud" OR "Vertex AI" OR "BigML" OR "TensorFlow" OR "PyTorch" OR "Weka" OR "scikit-learn" OR "scikit learn" OR "Keras"),160
