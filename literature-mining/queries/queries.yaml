@@ -1,0 +1,80 @@
+queries:
+  # Skip broad queries because of API limits
+
+  # - id: ml_manufacturing
+  #   description: Machine learning in manufacturing
+  #   query: TITLE-ABS-KEY("machine learning" AND manufacturing)
+  #
+
+  # - id: ml_production
+  #   description: Machine learning in production
+  #   query: TITLE-ABS-KEY("machine learning" AND production)
+  #
+
+  - id: ml_product_development
+    description: Machine learning in product development
+    query: TITLE-ABS-KEY("machine learning" AND "product development")
+
+  - id: ml_planning_production
+    description: Machine learning in production planning
+    query: TITLE-ABS-KEY("machine learning" AND planning AND production)
+
+  - id: ml_product_design
+    description: Machine learning in product design
+    query: TITLE-ABS-KEY("machine learning" AND "product design")
+
+  - id: ml_manufacturing_optimization
+    description: Machine learning in manufacturing optimization
+    query: TITLE-ABS-KEY("machine learning" AND manufacturing AND optimization)
+
+  - id: ml_production_optimization
+    description: Machine learning in production optimization
+    query: TITLE-ABS-KEY("machine learning" AND production AND optimization)
+
+  - id: ml_predictive_maintenance
+    description: Machine learning in predictive maintenance
+    query: TITLE-ABS-KEY("machine learning" AND "predictive maintenance")
+
+  - id: ml_anomaly_detection_production
+    description: Machine learning and anomaly detection in production
+    query: TITLE-ABS-KEY("machine learning" AND "anomaly detection" AND production)
+
+  - id: ml_process_control
+    description: Machine learning in process control
+    query: TITLE-ABS-KEY("machine learning" AND "process control")
+
+  - id: ml_process_modeling
+    description: Machine learning in process modeling
+    query: TITLE-ABS-KEY("machine learning" AND "process modeling")
+
+  - id: ml_rul
+    description: Machine learning and remaining useful life
+    query: TITLE-ABS-KEY("machine learning" AND (RUL OR "remaining useful life"))
+
+  - id: ml_defect_detection
+    description: Machine learning for defect detection in manufacturing
+    query: TITLE-ABS-KEY("machine learning" AND "defect detection" AND manufacturing)
+
+  - id: ml_plm
+    description: Machine learning and product lifecycle management
+    query: TITLE-ABS-KEY("machine learning" AND (PLM OR "product lifecycle management"))
+
+  - id: ml_quality_control
+    description: Machine learning for quality control in manufacturing
+    query: TITLE-ABS-KEY("machine learning" AND "quality control" AND manufacturing)
+
+  - id: ml_process_optimization
+    description: Machine learning for process optimization
+    query: TITLE-ABS-KEY("machine learning" AND "process optimization" AND manufacturing)
+
+  - id: ml_supply_chain
+    description: Machine learning in supply chain and production
+    query: TITLE-ABS-KEY("machine learning" AND "supply chain" AND production)
+
+  - id: ml_automation
+    description: Machine learning and automation in manufacturing
+    query: TITLE-ABS-KEY("machine learning" AND automation AND manufacturing)
+
+  - id: ml_robotics_production
+    description: Machine learning and robotics in production
+    query: TITLE-ABS-KEY("machine learning" AND robotics AND production)
