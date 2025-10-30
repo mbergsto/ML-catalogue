@@ -1,0 +1,5 @@
+Query (short),Query (exact),Total,After 2015,After 2020,After 2023,Note,After 2015 (%),After 2020 (%),After 2023 (%)
+ML framework,"""machine learning framework""",7772,7405,6468,4518,,95.3,83.2,58.1
+ML platform,"""machine learning platform""",606,599,488,250,,98.8,80.5,41.3
+(Platform ∨ framework) ∧ manufacturing,"( ""machine learning platform"" OR ""machine learning framework"" OR ""MLOps"" OR ""AutoML"" ) AND ""manufacturing""",290,289,272,187,,99.7,93.8,64.5
+(Platform ∨ framework) ∧ (manufacturing ∨ production),"( ""machine learning platform"" OR ""machine learning framework"" OR ""MLOps"" OR ""AutoML"" ) AND ( ""manufacturing"" OR ""production"" )",855,852,802,559,‘production’ is broader than manufacturing,99.6,93.8,65.4
