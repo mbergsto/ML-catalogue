@@ -100,6 +100,15 @@ def build_overlap_matrix(q2ids: dict[str, set]):
         data.append(row)
     return pd.DataFrame(data, index=qids, columns=qids)
 
+def list_top_overlaps(pairs_path: Path, n: int = 10):
+    # List top n most similar query pairs
+    df = pd.read_csv(pairs_path)
+    df = df[df["query_a"] != df["query_b"]]
+    df_sorted = df.sort_values("jaccard", ascending=False).head(n)
+    print("\nTop overlapping query pairs:")
+    print(df_sorted[["query_a", "query_b", "overlap", "jaccard"]].to_string(index=False))
+    return df_sorted
+
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     q2ids = load_all_records(RAW_DIR)
@@ -120,6 +129,8 @@ def main():
     print(f"Wrote: {pair_out}")
     print(f"Wrote: {matrix_out}")
     print(f"Wrote: {sizes_out}")
+
+    list_top_overlaps(pair_out)
 
 if __name__ == "__main__":
     main()
