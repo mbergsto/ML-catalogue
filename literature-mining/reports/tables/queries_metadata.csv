@@ -1,3 +1,6 @@
 query_id,query,n_returned,refs_attempted,retrieved_at,fetch_refs,total_records_in_jsonl,total_references_counted,folder
-ml_product_development,"TITLE-ABS-KEY(""machine learning"" AND ""product development"")",915,915,2025-11-03T14:05:38Z,True,915,18321,../data/raw-refs/ml_product_development
-ml_planning_production,"TITLE-ABS-KEY(""machine learning"" AND planning AND production)",2295,2295,2025-11-03T14:50:01Z,True,2295,26369,../data/raw-refs/ml_planning_production
+ml_planning_production,"TITLE-ABS-KEY(""machine learning"" AND planning AND production)",2295,2295,2025-11-03T20:43:07Z,True,2295,95918,../data/raw-refs-abs/ml_planning_production
+ml_production_optimization,"TITLE-ABS-KEY(""machine learning"" AND production AND optimization)",7195,7195,2025-11-03T20:43:07Z,True,7195,39886,../data/raw-refs-abs/ml_production_optimization
+ml_product_development,"TITLE-ABS-KEY(""machine learning"" AND ""product development"")",915,915,2025-11-03T20:43:07Z,True,915,40012,../data/raw-refs-abs/ml_product_development
+ml_manufacturing_optimization,"TITLE-ABS-KEY(""machine learning"" AND manufacturing AND optimization)",3938,3938,2025-11-03T20:43:07Z,True,3938,16416,../data/raw-refs-abs/ml_manufacturing_optimization
+ml_product_design,"TITLE-ABS-KEY(""machine learning"" AND ""product design"")",1409,1409,2025-11-03T20:43:07Z,True,1409,63824,../data/raw-refs-abs/ml_product_design
