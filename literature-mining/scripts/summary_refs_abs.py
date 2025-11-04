@@ -14,14 +14,11 @@ from pathlib import Path
 import pandas as pd
 import json
 
-
 # SETTINGS
-
 ROOT_PATH = Path(__file__).resolve().parent.parent / "data" / "raw-refs-abs"  # set main path here
-TOP_N = 10                             # how many top references to list per folder
+TOP_N = 10  # how many top references to list per folder
 
 # Basic normalization helpers
-
 def norm_doi(value):
     if not value:
         return ""
@@ -31,7 +28,6 @@ def norm_doi(value):
     value = value.replace("https://doi.org/", "").replace("http://doi.org/", "")
     return value
 
-
 def norm_title(value):
     if not value:
         return ""
@@ -39,34 +35,33 @@ def norm_title(value):
         value = value[0] if value else ""
     return str(value).strip()
 
-
 def ref_key(ref):
     doi = norm_doi(ref.get("doi"))
     title = norm_title(ref.get("title") or ref.get("sourcetitle"))
     refid = str(ref.get("id") or "").strip()
     return (doi, title, refid)
 
-# Abstract helper
-
+# Abstract helper 
 def extract_abstract(rec) -> str:
-    # Try common fields (Scopus sometimes uses different keys)
-    candidates = ("abstract", "description", "dc:description", "prism:teaser")
-    for key in candidates:
-        val = rec.get(key)
-        if val is None:
-            continue
-        # Handle list values (pick first non-empty)
-        if isinstance(val, (list, tuple)):
-            val = next((v for v in val if v and str(v).strip()), None)
-        # Handle dict values like {"text": "..."} if it ever appears
-        if isinstance(val, dict):
-            val = val.get("text") or val.get("value")
-        if val and str(val).strip():
-            return str(val).strip()
-    return ""  # empty if nothing usable
+    val = rec.get("abstract")
+    if val is None:
+        return ""
+    if isinstance(val, (list, tuple)):
+        # pick first non-empty stringy value
+        for v in val:
+            s = "" if v is None else str(v).strip()
+            if s:
+                return s
+        return ""
+    if isinstance(val, dict):
+        # common patterns if nested
+        for k in ("text", "value", "#text"):
+            if k in val and str(val[k]).strip():
+                return str(val[k]).strip()
+        return ""
+    return str(val).strip()
 
 # Folder processing
-
 def analyze_folder(folder: Path, top_n: int = 10):
     jsonl_files = sorted(folder.glob("*.jsonl"))
     if not jsonl_files:
@@ -93,7 +88,7 @@ def analyze_folder(folder: Path, top_n: int = 10):
 
                 n_records += 1
 
-                # Empty abstracts
+                # Abstract:
                 abs_txt = extract_abstract(rec)
                 if not abs_txt:
                     n_empty_abs += 1
@@ -156,9 +151,7 @@ def analyze_folder(folder: Path, top_n: int = 10):
         "unique_references": len(ref_counts),
     }
 
-
 # Main
-
 def main():
     if not ROOT_PATH.exists() or not ROOT_PATH.is_dir():
         raise FileNotFoundError(f"Root folder not found: {ROOT_PATH}")
@@ -179,7 +172,6 @@ def main():
         out_path = ROOT_PATH / "_overall_folder_summary.csv"
         df.to_csv(out_path, index=False)
         print(f"\nSaved overall summary → {out_path}")
-
 
 if __name__ == "__main__":
     main()
