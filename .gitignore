@@ -1,3 +1,8 @@
+# Environment
 .env
 
+# Raw API data + processed data
 literature-mining/data
+
+# Tables and figures (large files)
+literature_mining/reports/
