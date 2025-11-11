@@ -1,0 +1,6 @@
+pybliometrics
+python-dotenv
+PyYAML
+tqdm
+pandas
+matplotlib
