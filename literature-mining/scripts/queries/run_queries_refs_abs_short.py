@@ -27,13 +27,15 @@ def ensure_api_key():
     if not api_key:
         print("Missing API_KEY in .env", file=sys.stderr)
         sys.exit(1)
-    os.environ.setdefault("PYBLIOMETRICS_API_KEY", api_key)
+    # os.environ.setdefault("PYBLIOMETRICS_API_KEY", api_key)   # Changed to be able to extract new key
+    os.environ["PYBLIOMETRICS_API_KEY"] = api_key
 
 
 def init_pybliometrics():
     # Init client
     import pybliometrics
-    pybliometrics.scopus.init()
+    api_key = os.environ["PYBLIOMETRICS_API_KEY"]
+    pybliometrics.scopus.init(keys=[api_key])
 
 
 def write_jsonl(records, out_path: Path):
@@ -118,7 +120,7 @@ def main():
                     d["ref_docs"] = []
                     d["abstract"] = None
                     
-                if i % 1000 == 0 and full_doc:
+                if i % 500 == 0 and full_doc:
                     print(f"Quota check ({i} docs): {full_doc.get_key_remaining_quota()} retrievals left")
                     print(f"[{qid}] SEARCH quota resets at:", s.get_key_reset_time())
 
