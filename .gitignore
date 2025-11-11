@@ -2,7 +2,11 @@
 .env
 
 # Raw API data + processed data
-literature-mining/data
+# Keep the empty folders
+literature-mining/data/*
+!literature-mining/data/.gitkeep
+
 
 # Tables and figures (large files)
-literature-mining/reports/
+literature-mining/reports/*
+!literature-mining/reports/.gitkeep
