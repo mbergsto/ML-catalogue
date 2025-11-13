@@ -59,7 +59,7 @@ def main():
     script_dir = Path(__file__).resolve().parent
     project_root = script_dir.parents[1]
     yaml_path = project_root / "queries" / "queries.yaml"
-    base_out_dir = project_root / "data" / "test"
+    base_out_dir = project_root / "data" / "short-raw-refs-abs"
     base_out_dir.mkdir(parents=True, exist_ok=True)
 
     ensure_api_key()
