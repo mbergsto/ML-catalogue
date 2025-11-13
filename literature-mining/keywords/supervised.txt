@@ -1,0 +1,16 @@
+# Supervised learning methods 
+classification
+regression
+supervised
+labeled data
+ground truth
+random forest
+xgboost
+gradient boosting
+svm
+support vector machine
+decision tree
+logistic regression
+knn
+k-nearest neighbors
+naive bayes

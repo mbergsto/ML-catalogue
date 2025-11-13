@@ -1,0 +1,17 @@
+# Unsupervised learning methods
+unsupervised
+clustering
+cluster
+kmeans
+k-means
+hierarchical clustering
+pca
+principal component analysis
+ica
+autoencoder
+auto-encoder
+gmm
+gaussian mixture
+dimensionality reduction
+anomaly detection
+outlier detection

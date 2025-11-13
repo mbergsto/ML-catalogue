@@ -15,7 +15,7 @@ import pandas as pd
 import json
 
 # SETTINGS
-ROOT_PATH = Path(__file__).resolve().parents[2] / "data" / "test"  # set main path here
+ROOT_PATH = Path(__file__).resolve().parents[2] / "data" / "short-raw-refs-abs"  # set main path here
 TOP_N = 10  # how many top references to list per folder
 
 # Basic normalization helpers
