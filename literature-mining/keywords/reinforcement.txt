@@ -1,0 +1,14 @@
+# Reinforcement learning methods
+reinforcement learning
+rl
+agent
+policy
+reward
+q-learning
+q learning
+dqn
+deep q network
+actor-critic
+markov decision process
+mdp
+environment interaction
