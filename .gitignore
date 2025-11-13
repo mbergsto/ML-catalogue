@@ -11,3 +11,5 @@ literature-mining/data/*
 literature-mining/reports/*
 !literature-mining/reports/.gitkeep
 
+*.safetensors
+checkpoints/
