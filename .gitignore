@@ -10,3 +10,4 @@ literature-mining/data/*
 # Tables and figures (large files)
 literature-mining/reports/*
 !literature-mining/reports/.gitkeep
+
