@@ -1,15 +1,15 @@
 queries:
   # Skip broad queries because of API limits (?)
 
-  # - id: ml_manufacturing
-  #   description: Machine learning in manufacturing
-  #   query: TITLE-ABS-KEY("machine learning" AND manufacturing)
-  #
+  - id: ml_manufacturing
+    description: Machine learning in manufacturing
+    query: TITLE-ABS-KEY("machine learning" AND manufacturing)
+  
 
   # - id: ml_production
   #   description: Machine learning in production
   #   query: TITLE-ABS-KEY("machine learning" AND production)
-  #
+  
 
   - id: ml_product_development
     description: Machine learning in product development
