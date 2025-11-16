@@ -1,0 +1,71 @@
+# Unsupervised learning keywords
+anomaly detection
+auto encoder
+auto-encoder
+autoencoder
+clustering
+cluster
+cluster analysis
+clustered data
+cluster structure
+customer segmentation
+dbscan
+dictionary learning
+dimensionality reduction
+eigendecomposition
+feature extraction
+gaussian mixture
+gaussian mixture model
+gmm
+grouping similar
+hierarchical cluster
+hierarchical clustering
+ica
+independent component analysis
+isolation forest
+k means
+k-means
+kmeans
+latent dirichlet allocation
+latent representation
+latent space
+latent variables
+manifold learning
+mean shift
+mixture model
+mixture of gaussians
+new class detection
+nmf
+non negative matrix factorization
+non-negative matrix factorization
+novelty detection
+one class svm
+one-class svm
+outlier detection
+pca
+principal components
+principal component analysis
+segmentation of customers
+self organizing map
+self-organizing map
+som
+spectral cluster
+spectral clustering
+sparse coding
+t sne
+t-sne
+topic modeling
+topic modelling
+tsne
+umap
+unsupervised
+unsupervised approach
+unsupervised feature learning
+unsupervised learning
+unsupervised method
+unsupervised model
+unsupervised training
+variational auto encoder
+variational auto-encoder
+variational autoencoder
+vae

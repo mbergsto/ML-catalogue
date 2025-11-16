@@ -1,4 +1,4 @@
-# Unsupervised learning methods
+# Unsupervised learning keywords
 unsupervised
 clustering
 cluster

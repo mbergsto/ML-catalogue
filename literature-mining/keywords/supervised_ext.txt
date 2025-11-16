@@ -1,0 +1,97 @@
+# Supervised learning keywords
+accuracy
+adaboost
+annotated data
+auc
+catboost
+classification
+classification model
+classification models
+classification task
+classification tasks
+classifier
+classifiers
+confusion matrix
+cross validation
+cross-validation
+decision tree
+elastic net
+extra trees
+extra-trees
+f1 score
+f1-score
+forecasting
+forecasts
+gbm
+gradient boosted trees
+gradient boosting
+gradient boosting machines
+ground-truth
+ground truth
+hold-out set
+holdout set
+input-output pairs
+k-nearest neighbor
+k-nearest neighbors
+k nn
+knn
+label
+labels
+labeled
+labeled data
+labelled data
+lasso regression
+linear regression
+logistic regression
+logit model
+manual labeling
+manual labelling
+mae
+mse
+mlp classifier
+mlp regressor
+naive bayes
+neural network classifier
+neural network regressor
+out-of-sample
+output variable
+predictive maintenance
+predictive model
+predictive models
+precision
+prognostics and health management
+r2 score
+r-squared
+random forest
+random forest classifier
+random forest regressor
+recall
+regression
+regression model
+regression models
+regression task
+regression tasks
+remaining useful life
+ridge regression
+roc auc
+roc curve
+root mean squared error
+rul
+state-of-health prediction
+supervised
+supervised approach
+supervised learning
+support vector machine
+support vector regression
+svm
+svr
+target variable
+train samples
+train set
+training labels
+training samples
+test samples
+test set
+validation set
+xgboost
+
