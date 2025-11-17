@@ -1,0 +1,18 @@
+{
+  "phase_1": {
+    "name": "Planning",
+    "description": "Work on early product or production planning: market and demand analysis, production planning, conceptual design, capacity planning, forecasting, scenario evaluation before the factory is running."
+  },
+  "phase_2": {
+    "name": "Development_Production",
+    "description": "Work on designing and developing products or running production processes: process setup, scheduling, line balancing, robotics, automation, real-time control during manufacturing."
+  },
+  "phase_3": {
+    "name": "Optimization",
+    "description": "Work on improving existing processes or systems using collected data: monitoring, anomaly detection, predictive maintenance, quality improvement, process optimization, parameter tuning."
+  },
+  "phase_4": {
+    "name": "Use_Reuse",
+    "description": "Work on how products are used in the field or reused: in-service monitoring, usage data, remaining useful life, remanufacturing, refurbishment, recycling, circular economy, end-of-life strategies."
+  }
+}
