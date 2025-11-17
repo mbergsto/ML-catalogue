@@ -1,16 +1,34 @@
 queries:
   # Skip broad queries because of API limits (?)
 
-  # - id: ml_manufacturing
-  #   description: Machine learning in manufacturing
-  #   query: TITLE-ABS-KEY("machine learning" AND manufacturing)
-  #
+  - id: ml_inservice_monitoring
+    description: Machine learning for in-service monitoring of products
+    query: TITLE-ABS-KEY("machine learning" AND "in-service")
 
-  # - id: ml_production
-  #   description: Machine learning in production
-  #   query: TITLE-ABS-KEY("machine learning" AND production)
-  #
+  - id: ml_remanufacturing
+    description: Machine learning in remanufacturing processes
+    query: TITLE-ABS-KEY("machine learning" AND remanufacturing)
+  
+  - id: ml_disassembly
+    description: Machine learning in product disassembly processes
+    query: TITLE-ABS-KEY("machine learning" AND "disassembly")
 
+  - id: ml_end_of_life
+    description: Machine learning in end-of-life product management
+    query: TITLE-ABS-KEY("machine learning" AND "end-of-life" AND product)
+
+  - id: ml_recycling_manufacturing
+    description: Machine learning for recycling in manufacturing
+    query: TITLE-ABS-KEY("machine learning" AND recycling AND manufacturing)
+
+  - id: ml_sustainability_product
+    description: Machine learning for sustainable product use
+    query: TITLE-ABS-KEY("machine learning" AND sustainability AND product)
+
+  - id: ml_manufacturing
+    description: Machine learning in manufacturing
+    query: TITLE-ABS-KEY("machine learning" AND manufacturing)
+  
   - id: ml_product_development
     description: Machine learning in product development
     query: TITLE-ABS-KEY("machine learning" AND "product development")
@@ -78,3 +96,8 @@ queries:
   - id: ml_robotics_production
     description: Machine learning and robotics in production
     query: TITLE-ABS-KEY("machine learning" AND robotics AND production)
+
+  # - id: ml_production
+  #   description: Machine learning in production
+  #   query: TITLE-ABS-KEY("machine learning" AND production)
+  #
