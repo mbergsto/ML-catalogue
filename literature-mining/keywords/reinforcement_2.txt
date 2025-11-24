@@ -1,0 +1,39 @@
+# Reinforcement learning keywords
+reinforcement learning
+rl
+agent
+policy
+reward
+q-learning
+q learning
+dqn
+deep q network
+actor-critic
+markov decision process
+mdp
+environment interaction
+policy optimization
+policy gradient
+ppo
+proximal policy optimization
+a2c
+advantage actor-critic
+sarsa
+temporal-difference learning
+td-learning
+value iteration
+policy iteration
+credit assignment
+exploration exploitation
+exploration-exploitation
+epsilon-greedy
+multi-armed bandit
+contextual bandit
+rl agent
+reward function
+action-value function
+state-value function
+state-action space
+decision process
+sequential decision making
+online decision making

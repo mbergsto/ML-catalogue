@@ -26,11 +26,16 @@
     "SHAP": ["shap"],
     "Explainable AI": ["xai", "explainable ai"],
     "ARIMA": ["arima"],
-    "Bayesian Method": [
-        "bayesian",
-        "bayesian inference",
-        "bayesian network",
-        "bayesian networks"
-    ],
-    "K-Means": ["k-means", "k means", "kmeans"]
+    "Bayesian Method": ["bayesian", "bayesian inference", "bayesian network", "bayesian networks"],
+    "K-Means": ["k-means", "k means", "kmeans"],
+    "Reinforcement Learning": ["reinforcement learning", "rl"],
+    "Deep Reinforcement Learning": ["deep reinforcement learning", "drl"],
+    "Q-Learning": ["q learning", "q-learning", "qlearning"],
+    "Deep Q-Network": ["deep q network", "deep q-network", "dqn"],
+    "Policy Gradient": ["policy gradient", "policy-gradient"],
+    "Actor-Critic": ["actor critic", "actor-critic"],
+    "Proximal Policy Optimization": ["proximal policy optimization", "ppo"],
+    "Deep Deterministic Policy Gradient": ["deep deterministic policy gradient", "ddpg"],
+    "Twin Delayed DDPG": ["twin delayed ddpg", "td3"],
+    "Soft Actor-Critic": ["soft actor critic", "soft actor-critic", "sac"]
 }
