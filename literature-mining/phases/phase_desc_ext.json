@@ -1,18 +1,18 @@
 {
   "phase_1": {
     "name": "Planning",
-    "description": "Research and work focused on early conceptual and strategic decisions made before the production or product system is realized or operational. This includes defining market needs, product concepts, high-level production planning, simulation-based feasibility assessments, capacity planning, and technological evaluation before implementation. Scientific work in this phase typically proposes new theories, frameworks, or decision support methods without using operational data from a running system. Validation may be limited to hypothetical case studies, simulations, or small illustrative examples. The main goal is to shape what the future production or reuse system should be."
+    "description": "Research and activities before detailed design or production setup. Focus on defining needs, feasibility, and strategic decisions: customer and market requirement analysis, early concept generation and evaluation (e.g., simulation or virtual prototypes), risk and cost assessment, and high-level planning of production capacity, resources, and supply chains."
   },
   "phase_2": {
     "name": "Development_Production",
-    "description": "Research and work that designs, configures, or executes the core production or service processes. This phase involves implementation-oriented development of machinery, robotics, automation technology, scheduling, execution control, workflow management, and production system architecture. The system is assumed to be in operation, under commissioning, or in active development. Scientific work in this phase investigates how to make the physical or digital manufacturing system function correctly and efficiently during execution. Experiments often involve real production environments, prototypes, digital twins, or detailed simulations representing near-real conditions."
+    "description": "Designing products and implementing production systems. Includes detailed engineering, prototyping and validation, process planning and automation setup, material and component selection, manufacturability improvements, as well as establishing and controlling production lines or pilot manufacturing environments."
   },
   "phase_3": {
     "name": "Optimization",
-    "description": "Research and work that focuses on improving efficiency, performance, quality, reliability, or safety of an already functioning production or service system. This phase assumes that data is being generated through real usage or realistic long-term operation. Typical goals include continuous improvement, parameter optimization, fault detection, anomaly diagnosis, predictive decision-making, performance prediction, maintenance strategy enhancement, and control system refinement. Scientific work in this phase typically evaluates methods using historical data, operational logs, long-term experiments, or benchmarking against existing baseline systems. The production system already exists — the aim is to make it better."
+    "description": "Continuous improvement of established products or production processes using operational data. Encompasses process monitoring, performance analysis, anomaly and failure detection, predictive maintenance, quality improvement, and parameter or control optimization based on machine, sensor, and production data."
   },
   "phase_4": {
     "name": "Use_Reuse",
-    "description": "Research and work focused on the value, behavior, and lifecycle of products during active use or after end of primary use, including reuse, refurbishment, remanufacturing, recycling, and circular economy strategies. The primary objects of study are products in the field or those returning from the field. Scientific work in this phase deals with in-service monitoring, reliability assessment during use, estimation of remaining lifetime or value, and decisions related to end-of-life pathways, including environmental or economic impacts. The goal is to maximize total lifecycle value by extending usage, reducing waste, and recovering resources once products leave the factory."
+    "description": "Focus on products in operation or at end-of-life. Activities include field data collection on performance and user behavior, service and maintenance, remaining useful life estimation, repair, refurbishment, remanufacturing, recycling and circular strategies, and feeding operational insights back to design and production."
   }
 }
