@@ -76,7 +76,6 @@
     "N-BEATS": ["nbeats", "n-beats"],
     "DeepAR": ["deepar"],
 
-    "Reinforcement Learning": ["reinforcement learning", "rl"],
     "Deep Reinforcement Learning": ["deep reinforcement learning", "drl"],
     "Q-Learning": ["q learning", "q-learning", "qlearning"],
     "REINFORCE": ["reinforce"],
