@@ -1,0 +1,13 @@
+Once an automated welding line is fully deployed and operating at stable production levels, equipment degradation and process variability can gradually affect weld quality. 
+This study proposes a real-time anomaly detection and predictive maintenance framework designed to continuously improve reliability and reduce scrap rates in a high-volume production environment. 
+The methodology collects multimodal data streams from the welding stations, including electrical current signatures, electrode force measurements, and thermal imaging of the weld zone. 
+Historical records of part inspection results and maintenance logs are used to train machine learning models capable of linking parameter deviations with downstream quality issues.
+
+A stacked ensemble of deep autoencoders and random forest classifiers detects early signs of process drift and estimates the remaining useful life of consumable components such as electrodes. 
+When anomaly scores exceed defined thresholds, the system recommends proactive maintenance interventions with minimum disruption to production. 
+Real-time dashboards allow operators to monitor process health and view predictive maintenance alerts directly at the line.
+
+Industrial evaluation conducted over a 10-week period in automotive chassis production demonstrates a 35% reduction in defect rates and a 22% decrease in unplanned downtime. 
+Additionally, maintenance activities were rescheduled to off-peak periods, leading to more efficient labor utilization. 
+These results highlight that continuous monitoring and data-driven optimization strategies substantially enhance long-term stability and productivity of automated welding operations. 
+The work shows that leveraging operational data after process maturity is essential for ongoing improvement, enabling manufacturing systems to maintain high performance throughout their lifecycle.

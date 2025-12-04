@@ -1,0 +1,11 @@
+Commissioning of new automated assembly lines often requires extensive manual tuning of machine parameters to achieve stable process conditions before full-scale production can begin. 
+This paper presents a machine learning–based methodology to support parameter setup during production deployment of a new electronics assembly system. 
+The case study focuses on the integration of high-precision screwdriving stations used for fastening structural components in consumer devices. 
+Initial torque, rotational speed, and press-fit tolerance parameters are difficult to define manually due to varying material properties and part-to-part variations.
+A supervised learning model is developed using data collected from controlled pilot runs, including sensor measurements from torque drivers, part geometry data, and intermediate quality inspection results. 
+The model predicts optimal parameter settings that ensure assembly consistency and reduce the likelihood of fastening defects. 
+The recommended parameters are automatically uploaded to the station controller and evaluated through short validation runs monitored by built-in machine feedback systems.
+Compared to conventional trial-and-error tuning performed by commissioning engineers, the ML-assisted setup reduces the number of adjustment cycles required to reach a stable baseline configuration. 
+Experimental results from deployment on the industrial pilot line show a 40% reduction in commissioning time, fewer rejects during ramp-up, and smoother transition into volume production. 
+The study demonstrates that integrating machine learning into early production setup activities can accelerate deployment of new manufacturing processes and reduce dependency on manual expertise. 
+The approach supports faster realization of production capacity while ensuring conformance to engineering specifications from the start of manufacturing.
