@@ -74,7 +74,7 @@ def main():
     summary = []
 
     # Use all queries, narrow with slicing if testing
-    for q in queries[:1]:
+    for q in queries:
         qid = q["id"]
         qstr = q["query"]
 
