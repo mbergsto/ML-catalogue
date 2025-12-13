@@ -31,7 +31,7 @@
     "CatBoost": ["catboost"],
     "Bagging": ["bagging classifier", "bagging regressor"],
 
-    "Neural Network": ["neural network", "neural networks", "nn", "artificial neural network", "ann"],
+    "Neural Network": ["neural network", "neural networks", "artificial neural network", "ann"],
     "Deep Neural Network": ["deep neural network", "dnn"],
     "Residual Network": ["residual network", "resnet"],
     "Convolutional Neural Network": ["convolutional neural network", "cnn"],
@@ -49,7 +49,7 @@
     "Graph Attention Network": ["graph attention network", "gat"],
     "GraphSAGE": ["graphsage"],
 
-    "Autoencoder": ["autoencoder", "auto encoders", "ae"],
+    "Autoencoder": ["autoencoder", "auto encoders"],
     "Variational Autoencoder": ["variational autoencoder", "vae"],
     "Normalizing Flow": ["normalizing flow", "flow-based model"],
     "Diffusion Model": ["diffusion model", "ddpm", "ddim"],
@@ -71,7 +71,7 @@
     "Holt-Winters": ["holt winters", "holt-winters exponential smoothing"],
     "Prophet": ["prophet"],
     "Kalman Filter": ["kalman filter", "kalman filtering"],
-    "State Space Model": ["state space model", "ssm"],
+    "State Space Model": ["state space model"],
     "VAR": ["vector autoregression", "var model"],
     "N-BEATS": ["nbeats", "n-beats"],
     "DeepAR": ["deepar"],
@@ -84,7 +84,7 @@
     "Actor-Critic": ["actor critic", "actor-critic"],
     "A3C": ["a3c", "asynchronous advantage actor critic"],
     "Proximal Policy Optimization": ["proximal policy optimization", "ppo"],
-    "Deep Deterministic Policy Gradient": ["deep deterministic policy gradient", "ddpg"],
+    "Deep Deterministic Policy Gradient": ["deep deterministic policy gradient"],
     "Twin Delayed DDPG": ["twin delayed ddpg", "td3"],
     "Soft Actor-Critic": ["soft actor critic", "soft actor-critic", "sac"],
 
@@ -93,15 +93,15 @@
     "One-Class SVM": ["one-class svm", "one class svm"],
     "Elliptic Envelope": ["elliptic envelope"],
     "HBOS": ["hbos", "histogram based outlier score"],
-    "Minimum Covariance Determinant": ["minimum covariance determinant", "mcd"],
+    "Minimum Covariance Determinant": ["minimum covariance determinant"],
     "Matrix Profile": ["matrix profile"],
 
     "Genetic Algorithm": ["genetic algorithm", "ga"],
     "Particle Swarm Optimization": ["particle swarm optimization", "pso"],
-    "Simulated Annealing": ["simulated annealing", "sa"],
-    "Differential Evolution": ["differential evolution", "de"],
-    "Ant Colony Optimization": ["ant colony optimization", "aco"],
-    "Evolutionary Strategy": ["evolutionary strategy", "es"],
+    "Simulated Annealing": ["simulated annealing"],
+    "Differential Evolution": ["differential evolution"],
+    "Ant Colony Optimization": ["ant colony optimization"],
+    "Evolutionary Strategy": ["evolutionary strategy"],
     "CMA-ES": ["cma es", "covariance matrix adaptation evolution strategy"],
     "Firefly Algorithm": ["firefly algorithm"],
     "Harmony Search": ["harmony search"],
@@ -113,5 +113,5 @@
     "DoWhy": ["dowhy"],
     "Causal Forest": ["causal forest"],
     "Causal Impact": ["causal impact"],
-    "Invariant Causal Prediction": ["invariant causal prediction", "icp"]
+    "Invariant Causal Prediction": ["invariant causal prediction"]
 }
