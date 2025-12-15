@@ -13,3 +13,4 @@ literature-mining/reports/*
 
 **/ml_type_model/
 
+.DS_Store
