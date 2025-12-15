@@ -1,0 +1,12 @@
+Data-driven technologies are increasingly applied across all stages of manufacturing, supporting improved decision-making from early concept formation to end-of-life strategies. 
+This paper presents a systematic review of machine learning and analytics techniques used throughout the product lifecycle. 
+Publications between 2010 and 2025 were collected from major scientific databases, screened for relevance, and categorized based on the role of data in guiding planning, production, improvement, and operational decision processes.
+The review identifies major trends including the use of market analytics to inform product concepts, model-based optimization of manufacturing sequences, real-time process monitoring during operation, and predictive methods for maintenance and lifetime extension.
+
+Key considerations such as data availability, interoperability between lifecycle phases, and feedback loops from usage back to design are discussed. 
+The review also highlights challenges associated with technology adoption, including integration of simulation models with sensor data, variability in data quality, and organizational readiness for advanced analytics. 
+Case examples across domains such as automotive, aerospace, and consumer goods illustrate how heterogeneous approaches can support cost reduction, higher sustainability, and greater responsiveness to customer needs.
+
+The findings suggest that while many data-driven solutions have demonstrated effectiveness within individual lifecycle stages, there is a need for more seamless transitions of knowledge and models across phases. 
+Future research directions include standardized data architectures, lifecycle-spanning digital twins, and decision frameworks that explicitly incorporate circular economy principles. 
+This work provides a comprehensive overview of how data analytics contributes to improved manufacturing outcomes while emphasizing the importance of lifecycle integration.

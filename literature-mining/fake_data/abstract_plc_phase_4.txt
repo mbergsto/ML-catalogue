@@ -1,0 +1,13 @@
+Industrial hydraulic systems used in construction and mining equipment often experience harsh operational conditions that accelerate component wear and lead to costly downtime. 
+This paper presents a data-driven framework that supports both in-service maintenance decisions and reuse of components at the end of their primary lifecycle.
+Sensor data including pressure fluctuations, temperature gradients, vibration profiles, and fluid contamination levels are continuously collected from equipment deployed in the field. 
+A hybrid machine learning model combines physics-based degradation features with historical service records to estimate the remaining useful life (RUL) of critical components such as pumps and actuators.
+
+The RUL estimates are used to optimize maintenance scheduling to prevent unexpected failures while maximizing equipment availability.
+When components are removed from service, the system evaluates their residual performance potential to determine suitability for refurbishment or secondary deployment. 
+Materials and parts that no longer satisfy reuse criteria are directed to recycling processes, where traceability records help ensure proper recovery of valuable alloys.
+
+A multi-site validation study was conducted on a fleet of 120 excavators operating across different climate zones. 
+Results show a 27% reduction in unplanned failures, extended utilization of reusable parts by up to 18%, and a measurable decrease in raw material demand. 
+Feedback from field operations is fed back to design teams to improve future component lifetimes and support circular product strategies. 
+This research demonstrates that leveraging real-world usage data not only improves service quality but also enables more sustainable product lifecycle management through informed reuse and end-of-life decisions.

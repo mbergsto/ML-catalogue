@@ -1,0 +1,11 @@
+Manufacturers face increasing pressure to deliver new products that meet emerging customer expectations, sustainability goals, and financial constraints long before physical production begins. 
+This paper presents a framework for early-stage decision support that integrates market requirement analysis with virtual evaluation of conceptual production system designs.
+The approach starts with identifying functional needs through customer interviews, benchmarking, and demand forecasting. Based on these requirements, 
+several feasible product and manufacturing concepts are generated and represented in a digital planning environment. 
+Each concept is assessed with respect to projected costs, carbon footprint, and expected production capacity by means of scenario-based simulations. 
+Risk analysis is implemented to evaluate uncertainties such as volatile demand, supply chain disruptions, and resource availability. 
+A multi-criteria decision model combines all planning factors into a quantitative score that enables systematic comparison and prioritization of product–process alternatives. 
+A case study from the consumer electronics sector is used to demonstrate how early virtual planning can reveal potential bottlenecks and investment challenges well before detailed engineering begins. 
+Results show that integrating market insights, sustainability constraints, and production feasibility into conceptual planning provides stronger guidance for design targets, 
+reduces late-stage redesigns, and improves confidence in strategic manufacturing decisions. 
+The study concludes that planning activities performed prior to detailed design are critical for aligning innovation with future production capabilities and long-term business objectives.

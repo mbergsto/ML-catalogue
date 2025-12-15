@@ -1,4 +1,4 @@
-# Reinforcement learning methods
+# Reinforcement learning keywords
 reinforcement learning
 rl
 agent
