@@ -12,6 +12,7 @@ import yaml
 from tqdm import tqdm
 from pybliometrics.scopus import ScopusSearch, AbstractRetrieval
 
+BATCH_SIZE = 1000
 
 def load_queries(yaml_path: Path):
     # Load YAML queries
@@ -73,8 +74,7 @@ def main():
     run_ts = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
     summary = []
 
-    # Use all queries, narrow with slicing if testing
-    for q in queries[4:]:
+    for q in queries[:1]:
         qid = q["id"]
         qstr = q["query"]
 
@@ -87,61 +87,77 @@ def main():
         try:
             s = ScopusSearch(qstr, view="STANDARD")
             results = s.results or []
-            records = []
 
-            for i, doc in enumerate(tqdm(results, desc=f"{qid}")):
-                # Collect minimal metadata
-                eid = getattr(doc, "eid", None)
-                d = {
-                    "eid": eid,
-                    "doi": getattr(doc, "doi", None),
-                    "title": getattr(doc, "title", None),
-                    "query_id": qid,
-                    "retrieved_at": run_ts,
-                }
+            # STREAMING MODE — no large list in RAM
+            written = 0
+            buffer = []
 
-                if eid:
-                    # Get both abstract and references in one retrieval call
-                    full_doc = fetch_full_for_eid(eid, retries=retries)
-                    if full_doc:
-                        d["abstract"] = getattr(full_doc, "abstract", None) or getattr(full_doc, "description", None)
-                        refs = full_doc.references or []
-                        d["ref_docs"] = [
-                            {
-                                "doi": getattr(r, "doi", None),
-                                "title": getattr(r, "title", None),
-                            }
-                            for r in refs
-                        ]
+            with out_file.open("w", encoding="utf-8") as f:
+                for i, doc in enumerate(tqdm(results, desc=f"{qid}")):
+                    eid = getattr(doc, "eid", None)
+
+                    d = {
+                        "eid": eid,
+                        "doi": getattr(doc, "doi", None),
+                        "title": getattr(doc, "title", None),
+                        "query_id": qid,
+                        "retrieved_at": run_ts,
+                    }
+
+                    if eid:
+                        full_doc = fetch_full_for_eid(eid, retries=retries)
+                        if full_doc:
+                            d["abstract"] = getattr(full_doc, "abstract", None) or getattr(full_doc, "description", None)
+                            refs = full_doc.references or []
+                            d["ref_docs"] = [
+                                {
+                                    "doi": getattr(r, "doi", None),
+                                    "title": getattr(r, "title", None),
+                                }
+                                for r in refs
+                            ]
+                        else:
+                            d["ref_docs"] = []
+                            d["abstract"] = None
                     else:
                         d["ref_docs"] = []
                         d["abstract"] = None
-                else:
-                    d["ref_docs"] = []
-                    d["abstract"] = None
-                    
-                if i % 500 == 0 and full_doc:
-                    print(f"Quota check ({i} docs): {full_doc.get_key_remaining_quota()} retrievals left")
-                    print(f"[{qid}] SEARCH quota resets at:", s.get_key_reset_time())
 
-                records.append(d)
+                    buffer.append(d)
 
-            write_jsonl(records, out_file)
+                    # Write every 1000 results
+                    if len(buffer) >= BATCH_SIZE:
+                        for r in buffer:
+                            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+                        f.flush()  # <<< ensures data written to disk
+                        written += len(buffer)
+                        buffer.clear()
+
+                        print(f"Written {written}/{len(results)} docs so far")
+
+                    # Optional quota check
+                    if i % 500 == 0 and eid and full_doc:
+                        print(f"Quota check ({i} docs): {full_doc.get_key_remaining_quota()} left")
+
+                # Write remaining docs
+                if buffer:
+                    for r in buffer:
+                        f.write(json.dumps(r, ensure_ascii=False) + "\n")
+                    f.flush()
+                    written += len(buffer)
 
             meta = {
                 "query_id": qid,
                 "query": qstr,
-                "n_returned": len(records),
-                "refs_attempted": len(records),
-                "abstracts_attempted": len(records),
+                "n_returned": written,
                 "retrieved_at": run_ts,
                 "fetch_refs": True,
                 "fetch_abstracts": True,
             }
             meta_file.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-            print(f"{qid}: {len(records)} results, refs+abstracts attempted for all")
-
             summary.append(meta)
+
+            print(f"{qid}: Completed. Total {written} docs written.")
 
         except Exception as e:
             print(f"{qid}: error: {e}", file=sys.stderr)
@@ -154,3 +170,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
