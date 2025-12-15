@@ -5,11 +5,13 @@ from pathlib import Path
 from collections import defaultdict
 import pandas as pd
 
-RAW_DIR = Path(__file__).resolve().parents[2] / "data" / "raw"
+# Input/output directories
+RAW_DIR = Path(__file__).resolve().parents[2] / "data" / "short-raw-refs-abs"
 OUT_DIR = Path(__file__).resolve().parents[2] / "reports" / "tables"
 
+
+# Read a JSONL file → list of dicts
 def read_jsonl(p: Path):
-    # Read JSONL
     out = []
     with p.open("r", encoding="utf-8") as f:
         for line in f:
@@ -19,37 +21,48 @@ def read_jsonl(p: Path):
             out.append(json.loads(line))
     return out
 
+
+# Read a JSON file → list with one dict
 def read_json(p: Path):
-    # Read JSON
     with p.open("r", encoding="utf-8") as f:
         return [json.load(f)]
 
+
+# Normalize DOI to lowercase without prefix
 def norm_doi(x: str | None):
-    # Normalize DOI
     if not x:
         return None
     x = x.strip().lower()
     x = x.replace("https://doi.org/", "").replace("http://doi.org/", "")
     return x
 
+
+# Extract unique record id: prefer EID, fallback to DOI
 def extract_id(rec: dict):
-    # Choose stable id
     eid = rec.get("eid")
-    doi = norm_doi(rec.get("doi") or rec.get("dc:identifier") or rec.get("prism:doi"))
+    doi = norm_doi(
+        rec.get("doi") or rec.get("dc:identifier") or rec.get("prism:doi")
+    )
     return eid or doi
 
-def infer_query_id(file_path: Path, rec: dict) -> str:
-    # Prefer field, fallback to filename stem
-    return rec.get("query_id") or file_path.stem.replace(".jsonl", "")
 
+# Infer query_id: prefer field inside record; fallback to parent directory name
+def infer_query_id(file_path: Path, rec: dict) -> str:
+    return rec.get("query_id") or file_path.parent.name
+
+
+# Load all records recursively under RAW_DIR
 def load_all_records(raw_dir: Path):
-    # Load all raw files
-    files = sorted([*raw_dir.glob("*.jsonl"), *raw_dir.glob("*.json")])
+    files = sorted(
+        [*raw_dir.rglob("*.jsonl"), *raw_dir.rglob("*.json")]
+    )
+
     if not files:
         print(f"No raw files in {raw_dir}", file=sys.stderr)
         sys.exit(1)
 
-    q2ids = defaultdict(set)
+    q2ids: dict[str, set] = defaultdict(set)
+
     for fp in files:
         if fp.suffix == ".jsonl":
             records = read_jsonl(fp)
@@ -65,8 +78,9 @@ def load_all_records(raw_dir: Path):
 
     return q2ids
 
+
+# Build table with pairwise overlap and Jaccard similarity
 def build_pair_table(q2ids: dict[str, set]):
-    # Pairwise intersections and Jaccard
     rows = []
     qids = sorted(q2ids.keys())
     for i, a in enumerate(qids):
@@ -76,21 +90,28 @@ def build_pair_table(q2ids: dict[str, set]):
             inter = len(set_a & set_b)
             union = len(set_a | set_b)
             jacc = inter / union if union else 0.0
-            rows.append({
-                "query_a": a,
-                "size_a": len(set_a),
-                "query_b": b,
-                "size_b": len(set_b),
-                "overlap": inter,
-                "union": union,
-                "jaccard": round(jacc, 6),
-                "overlap_pct_of_a": round(inter / len(set_a), 6) if set_a else 0.0,
-                "overlap_pct_of_b": round(inter / len(set_b), 6) if set_b else 0.0,
-            })
+            rows.append(
+                {
+                    "query_a": a,
+                    "size_a": len(set_a),
+                    "query_b": b,
+                    "size_b": len(set_b),
+                    "overlap": inter,
+                    "union": union,
+                    "jaccard": round(jacc, 6),
+                    "overlap_pct_of_a": round(inter / len(set_a), 6)
+                    if set_a
+                    else 0.0,
+                    "overlap_pct_of_b": round(inter / len(set_b), 6)
+                    if set_b
+                    else 0.0,
+                }
+            )
     return pd.DataFrame(rows)
 
+
+# Create a symmetric overlap matrix
 def build_overlap_matrix(q2ids: dict[str, set]):
-    # Symmetric overlap matrix
     qids = sorted(q2ids.keys())
     data = []
     for a in qids:
@@ -100,19 +121,22 @@ def build_overlap_matrix(q2ids: dict[str, set]):
         data.append(row)
     return pd.DataFrame(data, index=qids, columns=qids)
 
+
+# Print the top-N most overlapping query pairs
 def list_top_overlaps(pairs_path: Path, n: int = 10):
-    # List top n most similar query pairs
     df = pd.read_csv(pairs_path)
-    df = df[df["query_a"] != df["query_b"]]
+    df = df[df["query_a"] != df["query_b"]]  # remove identical pairs
     df_sorted = df.sort_values("jaccard", ascending=False).head(n)
     print("\nTop overlapping query pairs:")
     print(df_sorted[["query_a", "query_b", "overlap", "jaccard"]].to_string(index=False))
     return df_sorted
 
+
+# Main entry point: load, compute tables, write results
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    q2ids = load_all_records(RAW_DIR)
 
+    q2ids = load_all_records(RAW_DIR)
     pair_df = build_pair_table(q2ids)
     matrix_df = build_overlap_matrix(q2ids)
 
@@ -131,6 +155,7 @@ def main():
     print(f"Wrote: {sizes_out}")
 
     list_top_overlaps(pair_out)
+
 
 if __name__ == "__main__":
     main()
