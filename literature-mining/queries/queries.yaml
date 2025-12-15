@@ -1,5 +1,5 @@
 queries:
-  # Skip broad queries because of API limits (?)
+  # Skip broad queries because of API limits 
 
   - id: ml_inservice_monitoring
     description: Machine learning for in-service monitoring of products
