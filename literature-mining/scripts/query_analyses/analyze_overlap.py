@@ -123,12 +123,12 @@ def build_overlap_matrix(q2ids: dict[str, set]):
 
 
 # Print the top-N most overlapping query pairs
-def list_top_overlaps(pairs_path: Path, n: int = 10):
+def list_top_overlaps(pairs_path: Path, n: int = 20):
     df = pd.read_csv(pairs_path)
     df = df[df["query_a"] != df["query_b"]]  # remove identical pairs
     df_sorted = df.sort_values("jaccard", ascending=False).head(n)
     print("\nTop overlapping query pairs:")
-    print(df_sorted[["query_a", "query_b", "overlap", "jaccard"]].to_string(index=False))
+    print(df_sorted[["query_a", "query_b", "overlap", "overlap_pct_of_b", "jaccard"]].to_string(index=False))
     return df_sorted
 
 
