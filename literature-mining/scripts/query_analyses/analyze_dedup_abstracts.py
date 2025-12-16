@@ -2,11 +2,12 @@ import sys
 from pathlib import Path
 import pandas as pd
 from collections import defaultdict
+import matplotlib.pyplot as plt
 
 # Input/output paths
 ABS_PATH = Path(__file__).resolve().parents[2] / "data" / "processed" / "abstracts" / "abstracts.csv"
-OUT_DIR = Path(__file__).resolve().parents[2] / "reports" / "tables" / "dedup_analyses"
-
+TABLE_DIR = Path(__file__).resolve().parents[2] / "reports" / "tables" / "dedup_analyses"
+FIGURE_DIR = Path(__file__).resolve().parents[2] / "reports" / "figures" / "dedup_analyses"
 
 # Load all records from abstracts.csv -> query_id -> set(doi)
 def load_query_sets_from_abstracts(csv_path: Path):
@@ -60,12 +61,8 @@ def dedup_keep_smallest(q2ids: dict[str, set]):
     return out, removed
 
 
-# Write query sizes before/after dedup, with totals
-def write_query_sizes_dedup(
-    q2ids_raw: dict[str, set],
-    q2ids_dedup: dict[str, set],
-    out_path: Path,
-):
+# Build query sizes df before/after dedup, with totals
+def build_query_sizes_dedup_df(q2ids_raw: dict[str, set], q2ids_dedup: dict[str, set]):
     rows = []
     for q in sorted(q2ids_raw.keys()):
         rows.append(
@@ -76,7 +73,6 @@ def write_query_sizes_dedup(
             }
         )
 
-    # Add total row
     rows.append(
         {
             "query_id": "__TOTAL__",
@@ -85,19 +81,56 @@ def write_query_sizes_dedup(
         }
     )
 
-    pd.DataFrame(rows).to_csv(out_path, index=False)
+    return pd.DataFrame(rows)
+
+
+# Save query sizes table to CSV
+def write_query_sizes_dedup(df_sizes: pd.DataFrame, out_path: Path):
+    df_sizes.to_csv(out_path, index=False)
+
+
+# Plot bars: before vs after per query
+def plot_query_sizes_pre_post(df_sizes: pd.DataFrame, out_path: Path):
+    dfp = df_sizes[df_sizes["query_id"] != "__TOTAL__"].copy()
+    dfp = dfp.sort_values("n_docs_before", ascending=False)
+
+    x = range(len(dfp))
+    w = 0.45
+
+    fig_w = max(10, 0.35 * len(dfp))
+    fig, ax = plt.subplots(figsize=(fig_w, 6))
+
+    ax.bar([i - w / 2 for i in x], dfp["n_docs_before"], width=w, label="before")
+    ax.bar([i + w / 2 for i in x], dfp["n_docs_after"], width=w, label="after")
+
+    ax.set_title("Query sizes: before vs after deduplication")
+    ax.set_xlabel("Query ID")
+    ax.set_ylabel("Number of articles")
+    ax.set_xticks(list(x))
+    ax.set_xticklabels(dfp["query_id"], rotation=45, ha="right")
+    ax.legend()
+
+    fig.savefig(out_path, dpi=300, bbox_inches="tight")
+    plt.close(fig)
 
 
 def main():
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-
     q2ids = load_query_sets_from_abstracts(ABS_PATH)
     q2ids_dedup, removed = dedup_keep_smallest(q2ids)
 
-    out_path = OUT_DIR / "abstract_query_sizes_dedup.csv"
-    write_query_sizes_dedup(q2ids, q2ids_dedup, out_path)
+    TABLE_DIR.mkdir(parents=True, exist_ok=True)
+    FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"Wrote: {out_path}")
+    df_sizes = build_query_sizes_dedup_df(q2ids, q2ids_dedup)
+
+    csv_out = TABLE_DIR / "abstract_query_sizes_dedup.csv"
+    plot_out = FIGURE_DIR / "abstract_query_sizes_pre_post.png"
+
+    write_query_sizes_dedup(df_sizes, csv_out)
+    plot_query_sizes_pre_post(df_sizes, plot_out)
+
+    print(f"Wrote: {csv_out}")
+    print(f"Wrote: {plot_out}")
     print(f"Dedup removals: {removed}")
 
 
