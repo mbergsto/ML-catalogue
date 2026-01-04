@@ -1,4 +1,8 @@
-# ML-catalogue
+# Specialization Project
+
+Title: Supporting Method Selection for Machine
+Learning in Product Development and
+Production
 
 ## Project Overview
 
