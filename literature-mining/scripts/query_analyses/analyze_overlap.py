@@ -7,10 +7,10 @@ import pandas as pd
 
 # Input/output directories
 RAW_DIR = Path(__file__).resolve().parents[2] / "data" / "short-raw-refs-abs"
-OUT_DIR = Path(__file__).resolve().parents[2] / "reports" / "tables"
+OUT_DIR = Path(__file__).resolve().parents[2] / "reports" / "tables" / "overlap_analysis"
 
 
-# Read a JSONL file → list of dicts
+# Read a JSONL file -> list of dicts
 def read_jsonl(p: Path):
     out = []
     with p.open("r", encoding="utf-8") as f:
@@ -22,7 +22,7 @@ def read_jsonl(p: Path):
     return out
 
 
-# Read a JSON file → list with one dict
+# Read a JSON file -> list with one dict
 def read_json(p: Path):
     with p.open("r", encoding="utf-8") as f:
         return [json.load(f)]
@@ -37,13 +37,11 @@ def norm_doi(x: str | None):
     return x
 
 
-# Extract unique record id: prefer EID, fallback to DOI
+# Extract unique record id: prefer DOI
 def extract_id(rec: dict):
-    eid = rec.get("eid")
-    doi = norm_doi(
+    return norm_doi(
         rec.get("doi") or rec.get("dc:identifier") or rec.get("prism:doi")
     )
-    return eid or doi
 
 
 # Infer query_id: prefer field inside record; fallback to parent directory name
@@ -131,6 +129,58 @@ def list_top_overlaps(pairs_path: Path, n: int = 20):
     print(df_sorted[["query_a", "query_b", "overlap", "overlap_pct_of_b", "jaccard"]].to_string(index=False))
     return df_sorted
 
+# Deduplicate across queries: smallest query keeps the record id
+def dedup_keep_smallest(q2ids: dict[str, set]):
+    # rid -> queries that contain it
+    rid2qs: dict[str, list[str]] = defaultdict(list)
+    for qid, ids in q2ids.items():
+        for rid in ids:
+            rid2qs[rid].append(qid)
+
+    out = {q: set(ids) for q, ids in q2ids.items()}
+
+    removed = 0
+    for rid, qs in rid2qs.items():
+        if len(qs) <= 1:
+            continue
+
+        # Keep in smallest group (stable tie-break on name)
+        keep = min(qs, key=lambda q: (len(out[q]), q))
+
+        for q in qs:
+            if q != keep and rid in out[q]:
+                out[q].remove(rid)
+                removed += 1
+
+    return out, removed
+
+# Write query sizes before/after dedup, with totals
+def write_query_sizes_dedup(
+    q2ids_raw: dict[str, set],
+    q2ids_dedup: dict[str, set],
+    out_path: Path,
+):
+    rows = []
+    for q in sorted(q2ids_raw.keys()):
+        rows.append(
+            {
+                "query_id": q,
+                "n_docs_before": len(q2ids_raw.get(q, set())),
+                "n_docs_after": len(q2ids_dedup.get(q, set())),
+            }
+        )
+
+    # Add total row
+    rows.append(
+        {
+            "query_id": "__TOTAL__",
+            "n_docs_before": sum(len(s) for s in q2ids_raw.values()),
+            "n_docs_after": sum(len(s) for s in q2ids_dedup.values()),
+        }
+    )
+
+    pd.DataFrame(rows).to_csv(out_path, index=False)
+
 
 # Main entry point: load, compute tables, write results
 def main():
@@ -153,6 +203,14 @@ def main():
     print(f"Wrote: {pair_out}")
     print(f"Wrote: {matrix_out}")
     print(f"Wrote: {sizes_out}")
+    
+    q2ids_dedup, removed = dedup_keep_smallest(q2ids)
+
+    sizes_dedup_out = OUT_DIR / "query_sizes_dedup.csv"
+    write_query_sizes_dedup(q2ids, q2ids_dedup, sizes_dedup_out)
+
+    print(f"Wrote: {sizes_dedup_out}")
+    print(f"Dedup removals: {removed}")
 
     list_top_overlaps(pair_out)
 

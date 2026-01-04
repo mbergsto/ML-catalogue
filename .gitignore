@@ -4,6 +4,7 @@
 # Raw API data + processed data
 # Keep the empty folders
 literature-mining/data/*
+literature-mining/data_backup/*
 !literature-mining/data/.gitkeep
 
 
