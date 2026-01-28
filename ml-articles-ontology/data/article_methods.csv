@@ -1,0 +1,104 @@
+ml_method,label
+http://example.com/ml-articles/Method_A3C,A3C
+http://example.com/ml-articles/Method_ARIMA,ARIMA
+http://example.com/ml-articles/Method_Actor_Critic,Actor-Critic
+http://example.com/ml-articles/Method_AdaBoost,AdaBoost
+http://example.com/ml-articles/Method_Ant_Colony_Optimization,Ant Colony Optimization
+http://example.com/ml-articles/Method_Attention_Mechanism,Attention Mechanism
+http://example.com/ml-articles/Method_Autoencoder,Autoencoder
+http://example.com/ml-articles/Method_Bagging,Bagging
+http://example.com/ml-articles/Method_Bayesian_Method,Bayesian Method
+http://example.com/ml-articles/Method_CMA_ES,CMA-ES
+http://example.com/ml-articles/Method_CatBoost,CatBoost
+http://example.com/ml-articles/Method_Causal_Forest,Causal Forest
+http://example.com/ml-articles/Method_Causal_Impact,Causal Impact
+http://example.com/ml-articles/Method_Convolutional_Neural_Network,Convolutional Neural Network
+http://example.com/ml-articles/Method_DBSCAN,DBSCAN
+http://example.com/ml-articles/Method_Decision_Tree,Decision Tree
+http://example.com/ml-articles/Method_Deep_Deterministic_Policy_Gradient,Deep Deterministic Policy Gradient
+http://example.com/ml-articles/Method_Deep_Neural_Network,Deep Neural Network
+http://example.com/ml-articles/Method_Deep_Q_Network,Deep Q-Network
+http://example.com/ml-articles/Method_Deep_Reinforcement_Learning,Deep Reinforcement Learning
+http://example.com/ml-articles/Method_DeepAR,DeepAR
+http://example.com/ml-articles/Method_Differential_Evolution,Differential Evolution
+http://example.com/ml-articles/Method_Diffusion_Model,Diffusion Model
+http://example.com/ml-articles/Method_DoWhy,DoWhy
+http://example.com/ml-articles/Method_Elastic_Net,Elastic Net
+http://example.com/ml-articles/Method_Elliptic_Envelope,Elliptic Envelope
+http://example.com/ml-articles/Method_Evolutionary_Strategy,Evolutionary Strategy
+http://example.com/ml-articles/Method_Explainable_AI,Explainable AI
+http://example.com/ml-articles/Method_Extra_Trees,Extra Trees
+http://example.com/ml-articles/Method_Firefly_Algorithm,Firefly Algorithm
+http://example.com/ml-articles/Method_Gated_Recurrent_Unit,Gated Recurrent Unit
+http://example.com/ml-articles/Method_Gaussian_Mixture_Model,Gaussian Mixture Model
+http://example.com/ml-articles/Method_Gaussian_Mixture_Model_Clustering,Gaussian Mixture Model Clustering
+http://example.com/ml-articles/Method_Gaussian_Process_Regression,Gaussian Process Regression
+http://example.com/ml-articles/Method_Generative_Adversarial_Network,Generative Adversarial Network
+http://example.com/ml-articles/Method_Genetic_Algorithm,Genetic Algorithm
+http://example.com/ml-articles/Method_Gradient_Boosting,Gradient Boosting
+http://example.com/ml-articles/Method_Granger_Causality,Granger Causality
+http://example.com/ml-articles/Method_Graph_Attention_Network,Graph Attention Network
+http://example.com/ml-articles/Method_Graph_Convolutional_Network,Graph Convolutional Network
+http://example.com/ml-articles/Method_Graph_Neural_Network,Graph Neural Network
+http://example.com/ml-articles/Method_GraphSAGE,GraphSAGE
+http://example.com/ml-articles/Method_HBOS,HBOS
+http://example.com/ml-articles/Method_Harmony_Search,Harmony Search
+http://example.com/ml-articles/Method_Hierarchical_Clustering,Hierarchical Clustering
+http://example.com/ml-articles/Method_Holt_Winters,Holt-Winters
+http://example.com/ml-articles/Method_Hotelling_T2,Hotelling T2
+http://example.com/ml-articles/Method_Independent_Component_Analysis,Independent Component Analysis
+http://example.com/ml-articles/Method_Isolation_Forest,Isolation Forest
+http://example.com/ml-articles/Method_K_Means,K-Means
+http://example.com/ml-articles/Method_K_Medoids,K-Medoids
+http://example.com/ml-articles/Method_K_Nearest_Neighbors,K-Nearest Neighbors
+http://example.com/ml-articles/Method_Kalman_Filter,Kalman Filter
+http://example.com/ml-articles/Method_LSTM,LSTM
+http://example.com/ml-articles/Method_Lasso_Regression,Lasso Regression
+http://example.com/ml-articles/Method_LightGBM,LightGBM
+http://example.com/ml-articles/Method_Linear_Discriminant_Analysis,Linear Discriminant Analysis
+http://example.com/ml-articles/Method_Linear_Regression,Linear Regression
+http://example.com/ml-articles/Method_Local_Outlier_Factor,Local Outlier Factor
+http://example.com/ml-articles/Method_Logistic_Regression,Logistic Regression
+http://example.com/ml-articles/Method_Matrix_Profile,Matrix Profile
+http://example.com/ml-articles/Method_Mean_Shift,Mean Shift
+http://example.com/ml-articles/Method_Minimum_Covariance_Determinant,Minimum Covariance Determinant
+http://example.com/ml-articles/Method_Multi_Layer_Perceptron,Multi-Layer Perceptron
+http://example.com/ml-articles/Method_N_BEATS,N-BEATS
+http://example.com/ml-articles/Method_Naive_Bayes,Naive Bayes
+http://example.com/ml-articles/Method_Neural_Network,Neural Network
+http://example.com/ml-articles/Method_Normalizing_Flow,Normalizing Flow
+http://example.com/ml-articles/Method_OPTICS,OPTICS
+http://example.com/ml-articles/Method_One_Class_SVM,One-Class SVM
+http://example.com/ml-articles/Method_Partial_Least_Squares,Partial Least Squares
+http://example.com/ml-articles/Method_Particle_Swarm_Optimization,Particle Swarm Optimization
+http://example.com/ml-articles/Method_Policy_Gradient,Policy Gradient
+http://example.com/ml-articles/Method_Principal_Component_Analysis,Principal Component Analysis
+http://example.com/ml-articles/Method_Prophet,Prophet
+http://example.com/ml-articles/Method_Proximal_Policy_Optimization,Proximal Policy Optimization
+http://example.com/ml-articles/Method_Q_Learning,Q-Learning
+http://example.com/ml-articles/Method_Quadratic_Discriminant_Analysis,Quadratic Discriminant Analysis
+http://example.com/ml-articles/Method_REINFORCE,REINFORCE
+http://example.com/ml-articles/Method_Random_Forest,Random Forest
+http://example.com/ml-articles/Method_Recurrent_Neural_Network,Recurrent Neural Network
+http://example.com/ml-articles/Method_Residual_Network,Residual Network
+http://example.com/ml-articles/Method_Ridge_Regression,Ridge Regression
+http://example.com/ml-articles/Method_Robust_Regression,Robust Regression
+http://example.com/ml-articles/Method_SARIMA,SARIMA
+http://example.com/ml-articles/Method_SARIMAX,SARIMAX
+http://example.com/ml-articles/Method_SHAP,SHAP
+http://example.com/ml-articles/Method_Simulated_Annealing,Simulated Annealing
+http://example.com/ml-articles/Method_Soft_Actor_Critic,Soft Actor-Critic
+http://example.com/ml-articles/Method_Squared_Prediction_Error,Squared Prediction Error
+http://example.com/ml-articles/Method_State_Space_Model,State Space Model
+http://example.com/ml-articles/Method_Support_Vector_Machine,Support Vector Machine
+http://example.com/ml-articles/Method_Support_Vector_Regression,Support Vector Regression
+http://example.com/ml-articles/Method_Temporal_Convolutional_Network,Temporal Convolutional Network
+http://example.com/ml-articles/Method_Transformer_Encoder,Transformer Encoder
+http://example.com/ml-articles/Method_Transformers,Transformers
+http://example.com/ml-articles/Method_Twin_Delayed_DDPG,Twin Delayed DDPG
+http://example.com/ml-articles/Method_UMAP,UMAP
+http://example.com/ml-articles/Method_UNet,UNet
+http://example.com/ml-articles/Method_VAR,VAR
+http://example.com/ml-articles/Method_Variational_Autoencoder,Variational Autoencoder
+http://example.com/ml-articles/Method_XGBoost,XGBoost
+http://example.com/ml-articles/Method_t_SNE,t-SNE

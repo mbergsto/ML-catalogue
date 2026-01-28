@@ -1,0 +1,41 @@
+task,taskLabel,description
+http://h-da.de/ml-ontology/action_recognition,action recognition,"Predicting the movement of a person based on sensor data, e.g. an accelerometer in a smartphone."
+http://h-da.de/ml-ontology/anomaly_detection,anomaly detection,"The identification of rare items, events or observations which raise suspicions by differing significantly from the expected or majority of the data"
+http://h-da.de/ml-ontology/association_rule_learning,association rule learning,Discovering interesting relations between variables in large databases
+http://h-da.de/ml-ontology/audio_classification,audio classification,Predicting classes for audio files
+http://h-da.de/ml-ontology/audio_regression,audio regression,Predicting numeric values for audio files
+http://h-da.de/ml-ontology/binary_classification,binary classification,"Classifying the elements of a given set into two groups, i.e., predicting which group each one belongs to"
+http://h-da.de/ml-ontology/classification,classification,Prediction of discrete categorical values (classes)
+http://h-da.de/ml-ontology/clustering,clustering,Grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense or another) to each other than to those in other groups
+http://h-da.de/ml-ontology/community_detection,community detection,"Organization of vertices in clusters, with many edges joining vertices of the same cluster and comparatively few edges joining vertices of different clusters."
+http://h-da.de/ml-ontology/feature_extraction,feature extraction,"Building informative, nonredundant derived values from an initial set of measured data to facilitate learning, generalization and interpretation"
+http://h-da.de/ml-ontology/feature_reduction,feature reduction,Reducing the number of features in a dataset without losing important information.
+http://h-da.de/ml-ontology/feature_selection,feature selection,Omitting features in a dataset without losing important information.
+http://h-da.de/ml-ontology/graph_matching,graph matching,Finding similarity between graphs
+http://h-da.de/ml-ontology/image_classification,image classification,Predicting categories (classes) for images
+http://h-da.de/ml-ontology/image_regression,image regression,Predicting numeric values for images
+http://h-da.de/ml-ontology/image_segmentation,image segmentation,Division of an image into sets of pixels for further processing
+http://h-da.de/ml-ontology/link_prediction,link prediction,Predicting an unobserved link between two entities in a network
+http://h-da.de/ml-ontology/multiclass_classification,multiclass classification,Classifying instances into one of multiple classes
+http://h-da.de/ml-ontology/named_entity_recognition,named entity recognition,Extraction of named entity mentions in unstructured text into pre-defined categories
+http://h-da.de/ml-ontology/object_detection,object detection,Detecting and localizing an object in an image
+http://h-da.de/ml-ontology/ranking,ranking,Ordering items in a set by criteria
+http://h-da.de/ml-ontology/recommendation,recommendation,Predicting users' preferences
+http://h-da.de/ml-ontology/regression,regression,Predicting continuous numerical values
+http://h-da.de/ml-ontology/sentence_similarity,sentence similarity,Predicting the semantic similarity between two sentences
+http://h-da.de/ml-ontology/sentiment_analysis,sentiment analysis,"Identifying and extracting subjective information in texts, e.g., mood"
+http://h-da.de/ml-ontology/tabular_classification,tabular classification,Predicting categories (classes) for rows of a data table
+http://h-da.de/ml-ontology/tabular_clustering,tabular clustering,Grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense or another) to each other than to those in other groups
+http://h-da.de/ml-ontology/tabular_regression,tabular regression,Predicting numeric values for rows of a data table
+http://h-da.de/ml-ontology/text_analytics,text analytics,Changing text documents that are unstructured  into structured data
+http://h-da.de/ml-ontology/text_classification,text classification,Predicting categories (classes) for texts
+http://h-da.de/ml-ontology/text_regression,text regression,Predicting numeric values for texts
+http://h-da.de/ml-ontology/time_series_analysis,time series analysis,Analyzing series of data points in time order
+http://h-da.de/ml-ontology/time_series_classification,time series classification,Predicting categories (classes) for time series
+http://h-da.de/ml-ontology/time_series_forecasting,time series forecasting,Predicting future events from past events
+http://h-da.de/ml-ontology/topic_modeling,topic modeling,Finding abstract topics that occur in several texts and classify documents accordingly
+http://h-da.de/ml-ontology/translation,translation,"Translating a text in one natural language, e.g., English into another, e.g., Spanish"
+http://h-da.de/ml-ontology/vertex_classification,vertex classification,"Mapping a system of vertices, for which it is then classified and counts the types for vertices"
+http://h-da.de/ml-ontology/video_classification,video classification,Predicting categories (classes) for videos
+http://h-da.de/ml-ontology/video_object_tracking,video object tracking,Tracking a moving object over a period of time
+http://h-da.de/ml-ontology/video_regression,video regression,Predicting numeric values for videos
