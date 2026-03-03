@@ -1,0 +1,20 @@
+@prefix mla:    <http://example.com/ml-articles/> .
+@prefix ml:     <http://h-da.de/ml-ontology/> .
+@prefix schema: <https://schema.org/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### Classes
+mla:Article a rdfs:Class .
+mla:Method  a rdfs:Class .
+
+### Properties
+# Direct link from an Article to an ML Ontology area (ML_area)
+mla:ml_area a rdf:Property ;
+  rdfs:domain mla:Article ;
+  rdfs:range  ml:ML_area .
+
+mla:mentionsMethod a rdf:Property ;
+  rdfs:domain mla:Article ;
+  rdfs:range  mla:Method .
